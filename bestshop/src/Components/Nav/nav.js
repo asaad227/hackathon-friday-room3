@@ -14,8 +14,8 @@ export default function Nav() {
           <Link to="/jewelery">
            Jewelery
           </Link>
-          <Link to="/womens">
-            Womens
+          <Link to="/women">
+            Women
           </Link>
           <Link to="/electronics" >
           Electronics
