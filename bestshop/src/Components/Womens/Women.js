@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 
 const Women = () => {
     const [data, setData] = useState([])
@@ -10,11 +9,12 @@ const Women = () => {
         setLoading(true)
         setError(false)
         try {
-            const { res } = await axios.get('https://fakestoreapi.com/products/category/womens')
+            const res  = await fetch('https://fakestoreapi.com/products/')
+            const data = await res.json();
             
-            setData(res)
+            setData(data)
             
-            console.log(res)
+            console.log(data)
 
             
         } catch (error) {
@@ -29,15 +29,26 @@ const Women = () => {
         fetchData()
     }, [])
 
+    // function loadingCheck(){
+    //     if(loading){
+    //         <p>Loading...</p> 
+    //       }else{
+    //         data.map(collection => (
+    //             <div key={collection.id}>{collection.title}</div>))}
+    // }
+
   return (
       <div>
-          {/* {loading && <p>Loading...</p>}
-            {error && <p>Error!</p>}
-          {item.map(collection => (
-                <div key={collection.id}>
-            ) */}
-          
-          
+           {data.map((e)=> {if(e.category ===  "women's clothing"){
+    return (<div key={e.id}>
+   <h4>{e.title}</h4>
+   <img src={e.image} width={200} alt={e.title}/>
+   <h5>{e.category}</h5>
+   <p>{e.description}</p>
+   </div>)
+   }else{
+    return <div key={e.id}></div>
+   }})}     
     </div>
   )
 }
