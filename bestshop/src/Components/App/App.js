@@ -1,13 +1,16 @@
-import './App.css';
-import ApiCall from '../fetchData/fetch';
-
+import React from 'react'
+import Jewelery from '../Jewelery/jewelery'
+import Mens from '../Mens/mens';
+import Electronics from '../Electronics/electronics';
 
 function App() {
   return (
-    <div className="App">
-    <ApiCall/> 
+    <div>
+<Jewelery/>
+<Mens/>
+<Electronics/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
