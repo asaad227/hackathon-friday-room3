@@ -1,0 +1,18 @@
+.navWrapper{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navList{
+    flex : 10;
+      margin-right: 4rem;
+        gap: 2rem;
+        cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .navList {
+        display: none;
+    }
+}

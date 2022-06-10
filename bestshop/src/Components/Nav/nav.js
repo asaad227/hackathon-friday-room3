@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <div>
-    <nav>
-     <Link to="/">
+    <nav className='navWrapper'>
+     <Link className='navList' to="/">
            Home
           </Link>
           <Link to="/mens">
