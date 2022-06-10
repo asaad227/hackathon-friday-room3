@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
-function Jewelery() {
+function Home() {
   const [data, setData] = useState([]);
 
   async function getApi() {
-    const response = await fetch(`https://fakestoreapi.com/products`);
+    const response = await fetch(
+      `https://fakestoreapi.com/products/categories`
+    );
     const data = await response.json();
     console.log(data);
     if (data.status === 404) {
@@ -20,8 +22,8 @@ function Jewelery() {
 
   return (
     <div>
-      {data.map((e) => {
-        if (e.category === "jewelery") {
+      {data.map((e, index) => {
+        if (index < 10) {
           return (
             <div key={e.id}>
               <h4>{e.title}</h4>
@@ -30,12 +32,10 @@ function Jewelery() {
               <p>{e.description}</p>
             </div>
           );
-        } else {
-          return <div key={e.id}></div>;
         }
       })}
     </div>
   );
 }
 
-export default Jewelery;
+export default Home;

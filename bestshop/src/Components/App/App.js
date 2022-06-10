@@ -1,16 +1,18 @@
-import React from 'react'
-import Jewelery from '../Jewelery/jewelery'
-import Mens from '../Mens/mens';
-import Electronics from '../Electronics/electronics';
+import React from "react";
+import Home from "../Home/Home";
+import Jewelery from "../Jewelery/jewelery";
+import Mens from "../Mens/mens";
+import Electronics from "../Electronics/electronics";
 
 function App() {
   return (
     <div>
-<Jewelery/>
-<Mens/>
-<Electronics/>
+      <Home />
+      {/* <Jewelery />
+      <Mens />
+      <Electronics /> */}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
