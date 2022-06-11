@@ -1,18 +1,26 @@
 .navWrapper{
-    height: 10vh;
     display: flex;
-    justify-content: space-between;
+    float: right;
+    padding: 10px 20px;
 }
 
 .navList{
-    flex : 10;
-      margin-right: 4rem;
-        gap: 2rem;
-        cursor: pointer;
+   display: flex;
+   margin-left: 20px;
+   text-decoration: none;
+    font-size: 16px;
 }
 
-@media screen and (max-width: 480px) {
-    .navList {
-        display: none;
+.navList:hover{
+    text-transform: uppercase;
+    text-decoration: underline;
+    
+}
+
+@media screen and (max-width: 700px) {
+
+    .navWrapper{
+        display: flex;
+        flex-direction: column;
     }
 }

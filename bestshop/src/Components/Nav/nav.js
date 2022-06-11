@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 export default function Nav() {
   return (
@@ -8,17 +9,20 @@ export default function Nav() {
      <Link className='navList' to="/">
            Home
           </Link>
-          <Link to="/mens">
+          <Link className='navList' to="/mens">
            Mens
           </Link>
-          <Link to="/jewelery">
+          <Link className='navList' to="/jewelery">
            Jewelery
           </Link>
-          <Link to="/women">
+          <Link className='navList' to="/women">
             Women
           </Link>
-          <Link to="/electronics" >
+          <Link className='navList' to="/electronics" >
           Electronics
+          </Link>
+          <Link className='navList' to="/checkout" >
+         Checkout
           </Link>
           </nav>
     </div>

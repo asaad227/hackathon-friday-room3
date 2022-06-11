@@ -18,16 +18,19 @@ function Jewelery() {
     getApi();
   }, []);
 
+ 
   return (
-    <div>
+    <div className="flex-container">
       {data.map((e) => {
         if (e.category === "jewelery") {
           return (
-            <div key={e.id}>
-              <h4>{e.title}</h4>
-              <img src={e.image} width={200} alt={e.title} />
-              <h5>{e.category}</h5>
-              <p>{e.description}</p>
+            <div className="flex-box" key={e.id}>
+            <button className="mainBtn" onClick={ ()=> localStorage.setItem(e.id, JSON.stringify(e))} >
+              <h3>{e.title}</h3>
+              <img src={e.image} width={200} height={200} alt={e.title} />
+              <h6>{e.category}</h6>
+              <button className="priceBtn">£{e.price}</button>
+              <p>{e.description}</p></button>
             </div>
           );
         } else {
