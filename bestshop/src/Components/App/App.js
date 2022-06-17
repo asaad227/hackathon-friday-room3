@@ -1,9 +1,9 @@
 import React from "react";
 import Home from "../Home/Home";
-import Jewelery from "../Jewelery/Jewelery";
-import Mens from "../Mens/Mens";
+import Jewelery from "../Jewelery/jewelery";
+import Mens from "../Mens/mens";
 import Electronics from "../Electronics/electronics";
-import Nav from "../Nav/Nav";
+import Nav from "../Nav/nav";
 import Women from "../Womens/Women";
 import Checkout from "../Checkout/checkout";
 import { Routes, Route } from "react-router-dom";
