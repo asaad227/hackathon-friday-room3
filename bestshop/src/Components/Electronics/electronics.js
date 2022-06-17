@@ -27,16 +27,16 @@ getApi()
   return (
     <div className='flex-container'>
    {data.map((e)=> {if(e.category ===  "electronics"){
-    return (<div className='flex-box' key={e.id}>
-    <button className='mainBtn' onClick={ ()=> localStorage.setItem(e.id, JSON.stringify(e))} >
-   <h3>{e.title}</h3>
-   <img src={e.image} width={200} alt={e.title}/>
-   <h6>{e.category}</h6>
-   <button className='priceBtn'>£{e.price}</button>
-   <p>{e.description}</p></button>
-   </div>)
+    return (<div className="flex-box" key={e.id}>
+            <h3 >{e.title}</h3>
+             <img width={200} height={200} src={e.image} alt={e.title} />
+              <h6>{e.category}</h6>
+              <h5 className="priceBtn">£{e.price.toFixed(2)}</h5>
+              <button className="mainBtn" onClick={ ()=> localStorage.setItem(e.id, JSON.stringify(e))} >Add to Cart</button>
+                <p>{e.description}</p>
+            </div>)
    }else{
-    return <div key={e.id}></div>
+    return;
    }})}   
     </div>
   );

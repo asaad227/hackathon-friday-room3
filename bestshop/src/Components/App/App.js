@@ -6,7 +6,7 @@ import Electronics from "../Electronics/electronics";
 import Nav from "../Nav/nav";
 import Women from "../Womens/Women";
 import { Routes, Route } from "react-router-dom";
-import Checkout from "../Checkout/checkout";
+import Checkout from "../Checkout/Checkout";
 
 function App() {
   return (
