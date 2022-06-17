@@ -6,7 +6,6 @@ export default function Checkout() {
  
  var newItem = [];
   function check() {
-    // eslint-disable-next-line 
     const objValue = Array.from(Object.values(localStorage));
     let item = [];
     if (objValue.length >= 1) {

@@ -36,7 +36,8 @@ getApi()
                 <p>{e.description}</p>
             </div>)
    }else{
-    return;
+    // eslint-disable-next-line 
+    return(<div key={e.id}></div>);
    }})}   
     </div>
   );
