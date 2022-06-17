@@ -14,7 +14,7 @@ function Home() {
     if (data.status === 404) {
       console.log("error");
     } else {
-      const exist = data.map((e)=> e.id === e.id? {...e, qty: 1}: e);
+      const exist = data.map((e)=> e.id? {...e, qty: 1}: e);
       console.log(exist)
       setData(exist)
     }

@@ -2,31 +2,18 @@ import React, { useEffect, useState } from 'react'
 
 const Women = () => {
     const [data, setData] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(false)
-
-    const fetchData = async () => {
-        setLoading(true)
-        setError(false)
-        try {
-            const res  = await fetch('https://fakestoreapi.com/products/')
-            const data = await res.json();
-            
+    async function getApi(){
+        const response = await fetch(`https://fakestoreapi.com/products`);
+        const data = await response.json();
+        console.log(data)
+        if (data.status === 404) { console.log("error") }
+        else {
             setData(data)
-            
-            console.log(data)
-
-            
-        } catch (error) {
-            setError(true)
-            
         }
-        setLoading(false)
-
-    }
-
+        
+        }
     useEffect(() => {
-        fetchData()
+        getApi()
     }, [])
 
     // function loadingCheck(){

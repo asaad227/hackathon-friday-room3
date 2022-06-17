@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 
 export default function Checkout() {
   const [items, setItems] = useState([]);
-  const objValue = Array.from(Object.values(localStorage));
+  
  
  var newItem = [];
   function check() {
+    const objValue = Array.from(Object.values(localStorage));
     let item = [];
     if (objValue.length >= 1) {
       for (let i = 0; i < objValue.length; i++) {
