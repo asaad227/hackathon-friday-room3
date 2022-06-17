@@ -1,12 +1,13 @@
 import React from "react";
 import Home from "../Home/Home";
-import Jewelery from "../Jewelery/jewelery";
-import Mens from "../Mens/mens";
-import Electronics from "../Electronics/electronics";
-import Nav from "../Nav/nav";
+import Jewelery from "../Jewelery/Jewelery";
+import Mens from "../Mens/Mens";
+import Electronics from "../Electronics/Electronics";
+import Nav from "../Nav/Nav";
 import Women from "../Womens/Women";
-import { Routes, Route } from "react-router-dom";
 import Checkout from "../Checkout/Checkout";
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Checkout2() {
+export default function Checkout() {
   const [items, setItems] = useState([]);
   const objValue = Array.from(Object.values(localStorage));
  
