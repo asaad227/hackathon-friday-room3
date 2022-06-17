@@ -19,6 +19,7 @@ export default function Checkout() {
 
   useEffect(() => {
     setItems(newItem);
+    //eslint-disable-next-line
   }, []);
 
   function onAdd(e) {
