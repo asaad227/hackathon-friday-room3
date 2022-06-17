@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
-
-
-
 function Electronics() {
 const [data, setData] = useState([]);
 
@@ -12,7 +8,7 @@ async function getApi(){
   console.log(data)
   if (data.status === 404) { console.log("error") }
   else {
-      setData(data)
+      return setData(data)
   }
   
   }
@@ -36,11 +32,9 @@ getApi()
                 <p>{e.description}</p>
             </div>)
    }else{
-    // eslint-disable-next-line 
     return(<div key={e.id}></div>);
    }})}   
-    </div>
-  );
+    </div>);
 }
 
 export default Electronics;
