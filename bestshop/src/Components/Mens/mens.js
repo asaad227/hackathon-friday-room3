@@ -12,8 +12,11 @@ async function getApi(){
   console.log(data)
   if (data.status === 404) { console.log("error") }
   else {
-      setData(data)
-  }
+    const exist = data.map((e)=> e.id? {...e, qty: 1}: e);
+    console.log(exist)
+    setData(exist)
+  
+}
   
   }
 

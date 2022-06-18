@@ -8,17 +8,22 @@ async function getApi(){
   console.log(data)
   if (data.status === 404) { console.log("error") }
   else {
-      return setData(data)
+      const exist = data.map((e)=> e.id? {...e, qty: 1}: e);
+      console.log(exist)
+      setData(exist)
+    
   }
   
   }
 
-
-
-
 useEffect(()=>{
 getApi()
 }, [])
+
+
+ 
+  
+
   
   return (
     <div className='flex-container'>
@@ -28,7 +33,7 @@ getApi()
              <img className='productImg' src={e.image} alt={e.title} />
               <h6>{e.category}</h6>
               <h5 className="priceBtn">£{e.price.toFixed(2)}</h5>
-              <button className="mainBtn" onClick={ ()=> localStorage.setItem(e.id, JSON.stringify(e))} >Add to Cart</button>
+              <button className="mainBtn" onClick={()=>localStorage.setItem(e.id, JSON.stringify(e))} >Add to Cart</button>
                 <p>{e.description}</p>
             </div>)
    }else{
