@@ -25,8 +25,8 @@ function Jewelery() {
         if (e.category === "jewelery") {
           return (
             <div className="flex-box" key={e.id}>
-            <h3 >{e.title}</h3>
-             <img width={200} height={200} src={e.image} alt={e.title} />
+            <h5>{e.title}</h5>
+             <img className="productImg" src={e.image} alt={e.title} />
               <h6>{e.category}</h6>
               <h5 className="priceBtn">£{e.price.toFixed(2)}</h5>
               <button className="mainBtn" onClick={ ()=> localStorage.setItem(e.id, JSON.stringify(e))} >Add to Cart</button>

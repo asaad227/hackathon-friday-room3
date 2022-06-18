@@ -1,7 +1,6 @@
 import React,{ useEffect, useState } from "react";
 import "./Home.css";
 import Pic from "./landing.png"
-
 function Home() {
   const [data, setData] = useState([]);
 
@@ -39,15 +38,15 @@ function Home() {
 
   return (
     <div>
-    <div className="landing">
-    <img src={Pic} alt="landing"/>
+    <div >
+    <img className="landing"  src={Pic} alt="landing"/>
     </div>
     
       <div className="flex-container">
         {data.map((e) => {
           return (
             <div className="flex-box" key={e.id}>
-            <h3 >{e.title}</h3>
+            <h5 >{e.title}</h5>
              <img className="productImg" src={e.image} alt={e.title} />
               <h6>{e.category}</h6>
               <h5>£{e.price.toFixed(2)}</h5>
