@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 
 export default function Checkout() {
   const [items, setItems] = useState([]);
-  
- 
- var newItem = [];
+
+  var newItem = [];
   function check() {
     const objValue = Array.from(Object.values(localStorage));
     let item = [];
@@ -26,7 +25,9 @@ export default function Checkout() {
   function onAdd(e) {
     const exist = items.find((x) => x.id === e.id);
     if (exist) {
-      setItems(items.map(x=> x.id === e.id? {...exist, qty: exist.qty +1}: x))
+      setItems(
+        items.map((x) => (x.id === e.id ? { ...exist, qty: exist.qty + 1 } : x))
+      );
     } else {
       setItems([...items, { ...e, qty: 1 }]);
     }
@@ -34,15 +35,14 @@ export default function Checkout() {
 
   function onRemove(e) {
     const exist = items.find((x) => x.id === e.id);
-    if(exist.qty > 1){
+    if (exist.qty > 1) {
       setItems(
-            items.map((x) => (x.id === e.id ? { ...exist, qty: exist.qty - 1 } : x))
-          );
-    }else{
-      setItems(items.filter((x) => x.id !== e.id))
-       localStorage.removeItem(e.id)
+        items.map((x) => (x.id === e.id ? { ...exist, qty: exist.qty - 1 } : x))
+      );
+    } else {
+      setItems(items.filter((x) => x.id !== e.id));
+      localStorage.removeItem(e.id);
     }
-
   }
 
   function count() {
@@ -56,12 +56,20 @@ export default function Checkout() {
                 <h5>{e.title}</h5>
                 <img src={e.image} width={50} height={50} alt={e.title} />
                 <h5>£{e.price}</h5>
-                <button className="chkAdd" onClick={() => onAdd(e)}>+</button>
-                <button className="chkRemove" onClick={() => onRemove(e) && localStorage.removeItem(e.id)} >
+
+                <button className="chkAdd" onClick={() => onAdd(e)}>
+                  +
+                </button>
+                <>{e.qty}</>
+                <button
+                  className="chkRemove"
+                  onClick={() => onRemove(e) && localStorage.removeItem(e.id)}
+                >
                   {" "}
                   -
                 </button>
-                <h5>Sub-total: £{e.price * e.qty}</h5>
+
+                {/* <h5>Sub-total: £{e.price * e.qty}</h5> */}
               </div>
             );
           })}
@@ -71,7 +79,7 @@ export default function Checkout() {
       return (
         <div>
           <h5>Your Basket Is Empty</h5>
-          <hr/>
+          <hr />
         </div>
       );
     }
@@ -84,7 +92,7 @@ export default function Checkout() {
       {count()}
       <div>
         <h4 className="subTotal">Cart-total: £{total.toFixed(2)} </h4>
-        <hr/>
+        <hr />
       </div>
     </div>
   );

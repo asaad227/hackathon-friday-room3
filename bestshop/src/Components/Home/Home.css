@@ -42,7 +42,9 @@ p{
     text-align: justify;
     font-size: x-small;
 }
-
+.numberQty{
+    font-size: small;
+}
 .mainBtn{
     border-radius: 5px;
     font-weight: bold;
@@ -81,7 +83,7 @@ p:hover{
     background-color: rgba(0, 128, 0, 0.519);
     border: none;
     border-radius: 2px;
-    margin: 10px;
+    margin: 3px;
 }
 
 .chkRemove{
@@ -89,7 +91,7 @@ p:hover{
     background-color: rgba(179, 27, 27, 0.571);
     border: none;
     border-radius: 2px;
-    margin: 10px;
+    margin:2px;
     
 }
 .navWrapper{
