@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import "./Nav.css";
 
 export default function Nav() {
   return (
@@ -22,7 +21,7 @@ export default function Nav() {
           Electronics
           </Link>
           <Link className='navList' to="/checkout" >
-         Checkout
+          Checkout
           </Link>
           </nav>
     </div>
