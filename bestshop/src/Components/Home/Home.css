@@ -118,6 +118,10 @@ p:hover{
     .navList{
         font-size: x-small;
     }
+
+    .navList:hover{
+        text-transform: none;
+    }
     .flex-box{
         width: 150px;
         height: auto;
